@@ -1,0 +1,46 @@
+<div class="container main-container headerOffset">
+  <div class="row">
+    <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="/">Home</a> </li>
+        <li> <a href="/user/account">Mi cuenta</a> </li>
+        <li> <a href="/inventario/">Inventario</a> </li>
+         <li class="active">Categoria</li>
+      </ul>
+    </div>
+    <div class="highlight breadcrumbDiv col-lg-12"><pre><a href="/inventario/nuevacategoria" class="btn btn-sm btn-tw">Nueva categoria</a></pre></div>
+  </div>
+  <div class="row innerPage">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row userInfo">
+      	<div class="panel panel-default">
+  <!-- Default panel contents -->
+			  <div class="panel-heading"><h2>Administracion de categorias</h2></div>
+
+			  <!-- Table -->
+			  <table class="table table-hover">
+			    <tr>
+						<th>ID</th>
+						<th>Categoria</th>
+						<th></th>
+				</tr>
+					
+					<% _.each(categorias, function(categoria) { %>
+          <tr data-id="<%= categoria.id %>" data-model="user">
+            <td><%= categoria.id %></td>
+            <td><%= categoria.name %></td>
+            <td><a href="/inventario/editcategoria/<%= categoria.id %>" class="btn btn-sm btn-warning">Editar</a></td>
+          <% }) %>
+			  </table>
+			</div>
+      </div>  <!--/row end-->
+    </div>
+  </div> <!--/.innerPage-->
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+
+<div class="gap"> </div>
+
+
+
+

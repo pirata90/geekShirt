@@ -1,0 +1,46 @@
+
+ <div class="container main-container headerOffset">
+  
+  <div class="row innerPage">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="row userInfo">
+       <form action="/session/create" method="POST" id="" role="form" >
+        <h2 class="form-signin-heading">Ingresar al sistema...</h2>
+            <% if(flash && flash.err) { %>
+                <ul class="alert alert-success">
+                 <% Object.keys(flash.err).forEach(function(error) { %>
+                 <li><%- JSON.stringify(flash.err[error]) %></li>
+               <% }) %>
+                </ul>
+             <% } %>
+            <div class="form-group login-username">
+              <div >
+                <input name="email" id="login-user" class="form-control input"  size="20" placeholder="Email" type="text">
+              </div>
+            </div>
+           <div class="form-group login-password">
+              <div >
+                <input name="password" id="login-password" class="form-control input"  size="20" placeholder="Contrasena" type="password">
+              </div>
+            </div>
+            <div >
+              <div >
+               <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit">
+                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+              </div>
+            </div>
+            <!--loginForm--> 
+        </form>
+      </div>  <!--/row end-->
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    </div>
+  </div> <!--/.innerPage-->
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+
+<div class="gap"> </div>
+
+

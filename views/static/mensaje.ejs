@@ -1,0 +1,66 @@
+<div class="container main-container headerOffset">
+  <div class="row">
+    <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="/">Home</a> </li>
+        <li> <a href="/user/account">Mi cuenta</a> </li>
+         <li class="active">Lista de Mensajes</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row innerPage">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row userInfo">
+      	<div class="panel panel-default">
+  <!-- Default panel contents -->
+			  <div class="panel-heading"><h2>Administracion de mensajes</h2></div>
+
+			  <!-- Table -->
+			  <table class="table table-hover">
+			    <tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Email</th>
+						<th></th>
+					</tr>
+					
+					<% _.each(mensajes, function(mensaje) { %>
+					<tr data-id="<%= mensaje.id %>" data-model="user">
+						<td><%= mensaje.id %></td>
+						<td><%= mensaje.name %></td>
+						<td><%= mensaje.email %></td>
+						<td><button class="btn btn-primary" data-toggle="modal" data-target="#<%= mensaje.id %>">Mostrar</button></td>
+						<!-- Modal -->
+			<div class="modal fade" id="<%= mensaje.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				        <h4 class="modal-title" id="myModalLabel">Mensaje</h4>
+				      </div>
+				      <div class="modal-body">
+				        <%= mensaje.mensaje %>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+					<% }) %>
+			  </table>
+			</div>			
+      </div>  <!--/row end-->
+    </div>
+  </div> <!--/.innerPage-->
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+
+<div class="gap"> </div>
+
+<script type="text/javascript" src="/script/jquery/jquery-1.10.1.min.js"></script> 
+
+<script src="/bootstrap/js/bootstrap.min.js"></script> 
+
+

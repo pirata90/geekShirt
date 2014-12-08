@@ -1,0 +1,123 @@
+<link href="/css/comentario.css" rel="stylesheet">
+
+<div class="container main-container headerOffset">
+  
+  <div class="row innerPage">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="row userInfo">
+       <div class="container">
+  <div class="row">
+    <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="/">Home</a> </li>
+        <li> <a href="/inventario/catalogo">Catalogo</a> </li>
+        <li> <a href="/inventario/producto/<%= articulo.id %>">Articulo</a> </li>
+         <li class="active"><%= articulo.name %></li>
+      </ul>
+    </div>
+    <h2>Comentarios</h2>
+  </div>
+    <div class="qa-message-list" id="wallmessages">
+          <% _.each(comentarios, function(comentario) { %>
+               <div class="message-item" id="m16">
+            <div class="message-inner">
+              <div class="message-head clearfix">
+                <div class="avatar pull-left"><a href=""><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a></div>
+                <div class="user-detail">
+                  <% _.each(users, function(user) { %>
+                  <% if (comentario.idUsuario == user.id) { %>
+                  <h5 class="handle"><%= user.name %></h5>
+                  <% } %>
+                  <% }) %>
+                  <div class="post-meta">
+                    <div class="asker-meta">
+                      <span class="qa-message-what"></span>
+                      <span class="qa-message-when">
+                        <span class="qa-message-when-data"><%= moment(comentario.createdAt).format('DD MM YYYY') %></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="qa-message-content">
+                <% if (comentario.fileName == null) { %>
+                  <%= comentario.comentario %>
+                <% } %>
+                 <% if (comentario.comentario == null) { %>
+                 <a href="/images/upload/comentario/<%= comentario.fileName %>" class="product-image" ><img src="/images/upload/comentario/<%= comentario.fileName %>" class="img-responsive" alt="Responsive image"></a>
+                <% } %>
+              </div>
+          </div></div>
+          <% }) %>
+
+                                
+        </div>
+</div>
+        
+      </div>  <!--/row end-->
+    </div>
+        
+          <div class="col-xs-12 col-sm-6">
+            <form action="/inventario/crearcomentario" method="post" role="form">
+            <div class="form-group required">
+              <label for="InputName"></label>
+              <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+              <input type="hidden" id="idArticulo" name="idArticulo" value="<%= articulo.id %>">
+               <% if (session.authenticated) { %>
+              <input type="hidden" id="idUsuario" name="idUsuario" value="<%= session.User.id %>">
+              <% } %>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <button type="submit" class="btn   btn-primary"><i class="fa fa-save"></i> &nbsp; Enviar </button>
+             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+             </form>
+             <button class="btn btn-tw" data-toggle="modal" data-target="#imagen">Subir imagen</button>
+          </div>
+           
+           <div class="col-lg-12">
+          
+           </div>
+
+
+
+        <!-- Modal -->
+      <div class="modal fade" id="imagen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Imagen</h4>
+              </div>
+              <div class="modal-body">
+                <form enctype="multipart/form-data" action="/inventario/imagencomentario" method="post" role="form">
+                   <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" name="uploadfile" id="uploadfile">
+                    </div>
+                    <button type="submit" class="btn   btn-primary"><i class="fa fa-save"></i> &nbsp; Enviar </button>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                    <input type="hidden" id="idArticulo" name="idArticulo" value="<%= articulo.id %>">
+                     <% if (session.authenticated) { %>
+                    <input type="hidden" id="idUsuario" name="idUsuario" value="<%= session.User.id %>">
+                    <% } %>
+                 </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div> <!--/.innerPage-->
+
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+
+<div class="gap"> </div>
+
+<script type="text/javascript" src="/script/jquery/jquery-1.10.1.min.js"></script> 
+
+<script src="/bootstrap/js/bootstrap.min.js"></script> 
+

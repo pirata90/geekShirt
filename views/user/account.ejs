@@ -1,0 +1,92 @@
+<div class="container main-container headerOffset">
+  <div class="row">
+    <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="/">Home</a> </li>
+        <li class="active"> Mi cuenta </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-7">
+      <h1 class="section-title-inner"><span><i class="fa fa-unlock-alt"></i> Mi cuenta </span></h1>
+      <div class="row userInfo">
+        <div class="col-xs-12 col-sm-12">
+          <% if (session.authenticated && session.User.admin == true) { %>
+          <h2 class="block-title-2"><span>Bienvenido administrador.</span><h2>
+          <ul class="myAccountList row">
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Ordenes" href="/user/orden"><i class="fa fa-calendar"></i> Historial de Ordenes</a> </div>
+            </li>
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Inventario" href="/inventario/"><i  class="fa fa-map-marker"></i>Inventario</a> </div>
+            </li>
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Usuarios" href="/user/"><i class="fa fa-cog"></i>Usuarios</a> </div>
+            </li>
+              <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Usuarios" href="/static/mensaje"><i class="glyphicon glyphicon-envelope"></i>Mensajes</a> </div>
+            </li>
+             <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+
+            </li>
+             <% } %>
+             <% if (session.authenticated && session.User.admin == false) { %>
+             <h2 class="block-title-2"><span>Bienvenido a su cuenta. Aqui usted puede adminstrar su informacion personal y ordenes.</span><h2>
+          <ul class="myAccountList row">
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Ordenes" href="/user/orden/<%= session.User.id %>"><i class="fa fa-calendar"></i> Historial de Ordenes</a> </div>
+            </li>
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Informacion personal" href="/user/edit/<%= session.User.id %>"><i class="fa fa-cog"></i> Informacion personal</a> </div>
+            </li>
+             <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              <div class="thumbnail equalheight"> <a title="Informacion personal" href="/user/editpass/<%= session.User.id %>"><i class="fa fa-cog"></i> Contraseña</a> </div>
+            </li>
+              <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+              
+            </li>
+             <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4  text-center ">
+
+            </li>
+             <% } %>
+          </ul>
+          <div class="clear clearfix"> </div>
+        </div>
+      </div>
+      <!--/row end--> 
+      
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-5"> </div>
+  </div>
+  <!--/row-->
+  
+  <div style="clear:both"></div>
+</div>
+<!-- /wrapper -->
+<div class="gap"> </div>
+
+<script type="text/javascript" src="/script/jquery/jquery-1.10.1.min.js"></script> 
+
+<script src="/bootstrap/js/bootstrap.min.js"></script> 
+
+<!-- include  parallax plugin --> 
+<script type="text/javascript"  src="/script/jquery.parallax-1.1.js"></script> 
+
+<!-- include mCustomScrollbar plugin //Custom Scrollbar  --> 
+<script type="text/javascript" src="/script/jquery.mCustomScrollbar.js"></script> 
+
+<!-- include grid.js // for equal Div height  --> 
+<script src="/script/grids.js"></script> 
+
+<!-- include carousel slider plugin  --> 
+<script src="/script/owl.carousel.min.js"></script> 
+
+<!-- jQuery minimalect // custom select   --> 
+<script src="/script/jquery.minimalect.min.js"></script> 
+
+<!-- include touchspin.js // touch friendly input spinner component   --> 
+<script src="/jscripts/bootstrap.touchspin.js"></script> 
+
+<!-- include custom script for site  --> 
+<script src="/script/script.js"></script> 

@@ -1,0 +1,143 @@
+
+<!-- Bootstrap core CSS -->
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet">
+
+<!-- css3 animation effect for this template -->
+<link href="/css/animate.min.css" rel="stylesheet">
+
+<!-- styles needed by mCustomScrollbar -->
+<link href="/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+
+<div class="parallaxOffset no-padding fixedContent contact-intro">
+  <div class="w100 map">
+    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1006987.91265401!2d-83.99654299999999!3d9.634255999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1417962182571" width="600" height="450" frameborder="0" style="border:0"></iframe>
+  </div>
+</div><!--/.contact-intro || map end-->
+
+<div class="wrapper whitebg contact-us">
+  <div class="container main-container ">
+    <div class="row innerPage">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        
+        <div class="row userInfo">
+          
+          <div class="col-xs-12 col-sm-12">
+            
+            <h1 class="title-big text-center section-title-style2">
+              <span> Contactenos </span>
+            </h1>
+            
+            <p class="lead text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+            </p>
+            <hr>
+            
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                
+                <h3 class="block-title-5">
+                  Informacion
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  <br>
+                  <strong>
+                    Telefono
+                  </strong>
+                  : 	+88-01680531352
+                  <br>
+                  <strong>
+                    Email
+                  </strong>
+                  : 	gshirt333@gmail.com
+                </p>
+              </div>
+                           
+              <div style="clear:both"> </div>
+              <hr>
+              <div style="clear:both"> </div>
+              
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <form action="/static/enviar" method="POST" id="form-contacto" role="form" >
+                <h3 class="block-title-5">
+                  Envienos un mensaje 
+                </h3>
+               <div class="form-group reg-username">
+                 <div >
+                <input name="nombre"  id="nombre"class="form-control input" size="20" placeholder="Nombre" type="text">
+                </div>
+               </div>
+               <div class="form-group reg-username">
+                 <div >
+                <input name="email"  id="email" class="form-control input" size="20" placeholder="Email" type="text">
+                </div>
+               </div>
+                <div class="form-group reg-username">
+                 <div >
+                   <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+                </div>
+               </div>
+               <div >
+                <input name="submit" class="btn  btn-block btn-lg btn-primary" value="Enviar" type="submit">
+                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+              </div>
+              </div>
+              </form>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                
+              </div>
+
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                
+              </div>
+              
+            </div><!--/.row-->
+   		</div>
+
+        </div> <!--/.row  ||  -->
+        
+      </div>
+    </div>  <!--/row || innerPage end-->
+    <div style="clear:both"> </div>
+  </div><!-- ./main-container -->
+  <div class="gap"></div>
+</div><!-- /main-container --
+
+<!-- Le javascript
+================================================== -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/script/jquery/1.8.3/jquery.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/script/validate/jquery.validate.min.js"></script> 
+<script type="text/javascript" src="/script/validate/contacto.js"></script>  
+
+<!-- include  parallax plugin -->
+<script type="text/javascript"  src="/script/jquery.parallax-1.1.js"></script>
+
+<!-- optionally include helper plugins -->
+<script type="text/javascript"  src="/script/helper-plugins/jquery.mousewheel.min.js"></script>
+
+<!-- include mCustomScrollbar plugin //Custom Scrollbar  --> 
+<script type="text/javascript" src="/script/jquery.mCustomScrollbar.js"></script> 
+
+<!-- include carousel slider plugin  -->
+<script src="/script/owl.carousel.min.js"></script>
+
+<!-- jQuery minimalect // custom select   -->
+<script src="/script/jquery.minimalect.min.js"></script>
+
+<!-- include touchspin.js // touch friendly input spinner component   --> 
+<script src="/script/bootstrap.touchspin.js"></script> 
+
+<!-- include custom script for site  -->
+<script src="/script/script.js"></script>
+
+</body>
+</html>
+
+

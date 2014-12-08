@@ -1,0 +1,265 @@
+
+ <div class="container main-container headerOffset">
+   <div class="breadcrumbDiv col-lg-12">
+      <ul class="breadcrumb">
+        <li> <a href="/">Home</a> </li>
+        <li> <a href="/user/account">Mi cuenta</a> </li>
+         <li class="active">Editar</li>
+      </ul>
+    </div>
+  <div class="row innerPage">
+   
+    <div class="col-lg-9 col-md-9 col-sm-7">
+      <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-user"></i> Informacion personal </span></h1>
+      <div class="row userInfo">
+        <div class="col-lg-12">
+          <p class="required"><sup>*</sup> Campo requerido</p>
+        </div>
+        <form action="/user/update/<%= user.id %>" method="POST" id="form" role="form">
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group required">
+              <label for="InputName">Nombre <sup>*</sup> </label>
+              <input required  type="text" class="form-control" id="InputName" name="nombre" value="<%= user.name %>" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label>Fecha de nacimiento</label>
+              <div class="row">
+                <div class="col-xs-4">
+                  <select class="form-control" id="days" name="days">
+                    <option >-</option>
+                    <option value="1"<% if (user.days == 1) { %>selected<% } %>>1&nbsp;&nbsp;</option>
+                    <option value="2"<% if (user.days == 2) { %>selected<% } %>>2&nbsp;&nbsp;</option>
+                    <option value="3"<% if (user.days == 3) { %>selected<% } %>>3&nbsp;&nbsp;</option>
+                    <option value="4"<% if (user.days == 4) { %>selected<% } %>>4&nbsp;&nbsp;</option>
+                    <option value="5"<% if (user.days == 5) { %>selected<% } %>>5&nbsp;&nbsp;</option>
+                    <option value="6"<% if (user.days == 6) { %>selected<% } %>>6&nbsp;&nbsp;</option>
+                    <option value="7"<% if (user.days == 7) { %>selected<% } %>>7&nbsp;&nbsp;</option>
+                    <option value="8"<% if (user.days == 8) { %>selected<% } %>>8&nbsp;&nbsp;</option>
+                    <option value="9"<% if (user.days == 9) { %>selected<% } %>>9&nbsp;&nbsp;</option>
+                    <option value="10"<% if (user.days == 10) { %>selected<% } %>>10&nbsp;&nbsp;</option>
+                    <option value="11"<% if (user.days == 11) { %>selected<% } %>>11&nbsp;&nbsp;</option>
+                    <option value="12"<% if (user.days == 12) { %>selected<% } %>>12&nbsp;&nbsp;</option>
+                    <option value="13"<% if (user.days == 13) { %>selected<% } %>>13&nbsp;&nbsp;</option>
+                    <option value="14"<% if (user.days == 14) { %>selected<% } %>>14&nbsp;&nbsp;</option>
+                    <option value="15"<% if (user.days == 15) { %>selected<% } %>>15&nbsp;&nbsp;</option>
+                    <option value="16"<% if (user.days == 16) { %>selected<% } %>>16&nbsp;&nbsp;</option>
+                    <option value="17"<% if (user.days == 17) { %>selected<% } %>>17&nbsp;&nbsp;</option>
+                    <option value="18"<% if (user.days == 18) { %>selected<% } %>>18&nbsp;&nbsp;</option>
+                    <option value="19"<% if (user.days == 19) { %>selected<% } %>>19&nbsp;&nbsp;</option>
+                    <option value="20"<% if (user.days == 20) { %>selected<% } %>>20&nbsp;&nbsp;</option>
+                    <option value="21"<% if (user.days == 21) { %>selected<% } %>>21&nbsp;&nbsp;</option>
+                    <option value="22"<% if (user.days == 22) { %>selected<% } %>>22&nbsp;&nbsp;</option>
+                    <option value="23"<% if (user.days == 23) { %>selected<% } %>>23&nbsp;&nbsp;</option>
+                    <option value="24"<% if (user.days == 24) { %>selected<% } %>>24&nbsp;&nbsp;</option>
+                    <option value="25"<% if (user.days == 25) { %>selected<% } %>>25&nbsp;&nbsp;</option>
+                    <option value="26"<% if (user.days == 26) { %>selected<% } %>>26&nbsp;&nbsp;</option>
+                    <option value="27"<% if (user.days == 27) { %>selected<% } %>>27&nbsp;&nbsp;</option>
+                    <option value="28"<% if (user.days == 28) { %>selected<% } %>>28&nbsp;&nbsp;</option>
+                    <option value="29"<% if (user.days == 29) { %>selected<% } %>>29&nbsp;&nbsp;</option>
+                    <option value="30"<% if (user.days == 30) { %>selected<% } %>>30&nbsp;&nbsp;</option>
+                    <option value="31"<% if (user.days == 31) { %>selected<% } %>>31&nbsp;&nbsp;</option>
+                  </select>
+                </div>
+                <div class="col-xs-4">
+                  <select class="form-control" name="months" id="months">
+                    <option >-</option>
+                    <option value="1"<% if (user.months == 1) { %>selected<% } %>>January&nbsp;</option>
+                    <option value="2"<% if (user.months == 2) { %>selected<% } %>>February&nbsp;</option>
+                    <option value="3"<% if (user.months == 3) { %>selected<% } %>>March&nbsp;</option>
+                    <option value="4"<% if (user.months == 4) { %>selected<% } %>>April&nbsp;</option>
+                    <option value="5"<% if (user.months == 5) { %>selected<% } %>>May&nbsp;</option>
+                    <option value="6"<% if (user.months == 6) { %>selected<% } %>>June&nbsp;</option>
+                    <option value="7"<% if (user.months == 7) { %>selected<% } %>>July&nbsp;</option>
+                    <option value="8"<% if (user.months == 8) { %>selected<% } %>>August&nbsp;</option>
+                    <option value="9"<% if (user.months == 9) { %>selected<% } %>>September&nbsp;</option>
+                    <option value="10"<% if (user.months == 10) { %>selected<% } %>>October&nbsp;</option>
+                    <option value="11"<% if (user.months == 11) { %>selected<% } %>>November&nbsp;</option>
+                    <option value="12"<% if (user.months == 12) { %>selected<% } %>>December&nbsp;</option>
+                  </select>
+                </div>
+                <div class="col-xs-4">
+                  <select class="form-control" name="years" id="years">
+                    <option >-</option>
+                    <option value="2014"<% if (user.years ==2014) { %>selected<% } %>>2014&nbsp;&nbsp;</option>
+                    <option value="2013"<% if (user.years ==2013) { %>selected<% } %>>2013&nbsp;&nbsp;</option>
+                    <option value="2012"<% if (user.years ==2012) { %>selected<% } %>>2012&nbsp;&nbsp;</option>
+                    <option value="2011"<% if (user.years ==2011) { %>selected<% } %>>2011&nbsp;&nbsp;</option>
+                    <option value="2010"<% if (user.years ==2010) { %>selected<% } %>>2010&nbsp;&nbsp;</option>
+                    <option value="2009"<% if (user.years ==2009) { %>selected<% } %>>2009&nbsp;&nbsp;</option>
+                    <option value="2008"<% if (user.years ==2008) { %>selected<% } %>>2008&nbsp;&nbsp;</option>
+                    <option value="2007"<% if (user.years ==2007) { %>selected<% } %>>2007&nbsp;&nbsp;</option>
+                    <option value="2006"<% if (user.years ==2006) { %>selected<% } %>>2006&nbsp;&nbsp;</option>
+                    <option value="2005"<% if (user.years ==2005) { %>selected<% } %>>2005&nbsp;&nbsp;</option>
+                    <option value="2004"<% if (user.years ==2004) { %>selected<% } %>>2004&nbsp;&nbsp;</option>
+                    <option value="2003"<% if (user.years ==2003) { %>selected<% } %>>2003&nbsp;&nbsp;</option>
+                    <option value="2002"<% if (user.years ==2002) { %>selected<% } %>>2002&nbsp;&nbsp;</option>
+                    <option value="2001"<% if (user.years ==2001) { %>selected<% } %>>2001&nbsp;&nbsp;</option>
+                    <option value="2000"<% if (user.years ==2000) { %>selected<% } %>>2000&nbsp;&nbsp;</option>
+                    <option value="1999"<% if (user.years ==1999) { %>selected<% } %>>1999&nbsp;&nbsp;</option>
+                    <option value="1998"<% if (user.years ==1998) { %>selected<% } %>>1998&nbsp;&nbsp;</option>
+                    <option value="1997"<% if (user.years ==1997) { %>selected<% } %>>1997&nbsp;&nbsp;</option>
+                    <option value="1996"<% if (user.years ==1996) { %>selected<% } %>>1996&nbsp;&nbsp;</option>
+                    <option value="1995"<% if (user.years ==1995) { %>selected<% } %>>1995&nbsp;&nbsp;</option>
+                    <option value="1994"<% if (user.years ==1994) { %>selected<% } %>>1994&nbsp;&nbsp;</option>
+                    <option value="1993"<% if (user.years ==1993) { %>selected<% } %>>1993&nbsp;&nbsp;</option>
+                    <option value="1992"<% if (user.years ==1992) { %>selected<% } %>>1992&nbsp;&nbsp;</option>
+                    <option value="1991"<% if (user.years ==1991) { %>selected<% } %>>1991&nbsp;&nbsp;</option>
+                    <option value="1990"<% if (user.years ==1990) { %>selected<% } %>>1990&nbsp;&nbsp;</option>
+                    <option value="1989"<% if (user.years ==1989) { %>selected<% } %>>1989&nbsp;&nbsp;</option>
+                    <option value="1988"<% if (user.years ==1988) { %>selected<% } %>>1988&nbsp;&nbsp;</option>
+                    <option value="1987"<% if (user.years ==1987) { %>selected<% } %>>1987&nbsp;&nbsp;</option>
+                    <option value="1986"<% if (user.years ==1986) { %>selected<% } %>>1986&nbsp;&nbsp;</option>
+                    <option value="1985"<% if (user.years ==1985) { %>selected<% } %>>1985&nbsp;&nbsp;</option>
+                    <option value="1984"<% if (user.years ==1984) { %>selected<% } %>>1984&nbsp;&nbsp;</option>
+                    <option value="1983"<% if (user.years ==1983) { %>selected<% } %>>1983&nbsp;&nbsp;</option>
+                    <option value="1982"<% if (user.years ==1982) { %>selected<% } %>>1982&nbsp;&nbsp;</option>
+                    <option value="1981"<% if (user.years ==1981) { %>selected<% } %>>1981&nbsp;&nbsp;</option>
+                    <option value="1980"<% if (user.years ==1980) { %>selected<% } %>>1980&nbsp;&nbsp;</option>
+                    <option value="1979"<% if (user.years ==1979) { %>selected<% } %>>1979&nbsp;&nbsp;</option>
+                    <option value="1978"<% if (user.years ==1978) { %>selected<% } %>>1978&nbsp;&nbsp;</option>
+                    <option value="1977"<% if (user.years ==1977) { %>selected<% } %>>1977&nbsp;&nbsp;</option>
+                    <option value="1976"<% if (user.years ==1976) { %>selected<% } %>>1976&nbsp;&nbsp;</option>
+                    <option value="1975"<% if (user.years ==1975) { %>selected<% } %>>1975&nbsp;&nbsp;</option>
+                    <option value="1974"<% if (user.years ==1974) { %>selected<% } %>>1974&nbsp;&nbsp;</option>
+                    <option value="1973"<% if (user.years ==1973) { %>selected<% } %>>1973&nbsp;&nbsp;</option>
+                    <option value="1972"<% if (user.years ==1972) { %>selected<% } %>>1972&nbsp;&nbsp;</option>
+                    <option value="1971"<% if (user.years ==1971) { %>selected<% } %>>1971&nbsp;&nbsp;</option>
+                    <option value="1970"<% if (user.years ==1970) { %>selected<% } %>>1970&nbsp;&nbsp;</option>
+                    <option value="1969"<% if (user.years ==1969) { %>selected<% } %>>1969&nbsp;&nbsp;</option>
+                    <option value="1968"<% if (user.years ==1968) { %>selected<% } %>>1968&nbsp;&nbsp;</option>
+                    <option value="1967"<% if (user.years ==1967) { %>selected<% } %>>1967&nbsp;&nbsp;</option>
+                    <option value="1966"<% if (user.years ==1966) { %>selected<% } %>>1966&nbsp;&nbsp;</option>
+                    <option value="1965"<% if (user.years ==1965) { %>selected<% } %>>1965&nbsp;&nbsp;</option>
+                    <option value="1964"<% if (user.years ==1964) { %>selected<% } %>>1964&nbsp;&nbsp;</option>
+                    <option value="1963"<% if (user.years ==1963) { %>selected<% } %>>1963&nbsp;&nbsp;</option>
+                    <option value="1962"<% if (user.years ==1962) { %>selected<% } %>>1962&nbsp;&nbsp;</option>
+                    <option value="1961"<% if (user.years ==1961) { %>selected<% } %>>1961&nbsp;&nbsp;</option>
+                    <option value="1960"<% if (user.years ==1960) { %>selected<% } %>>1960&nbsp;&nbsp;</option>
+                    <option value="1959"<% if (user.years ==1959) { %>selected<% } %>>1959&nbsp;&nbsp;</option>
+                    <option value="1958"<% if (user.years ==1958) { %>selected<% } %>>1958&nbsp;&nbsp;</option>
+                    <option value="1957"<% if (user.years ==1957) { %>selected<% } %>>1957&nbsp;&nbsp;</option>
+                    <option value="1956"<% if (user.years ==1956) { %>selected<% } %>>1956&nbsp;&nbsp;</option>
+                    <option value="1955"<% if (user.years ==1955) { %>selected<% } %>>1955&nbsp;&nbsp;</option>
+                    <option value="1954"<% if (user.years ==1954) { %>selected<% } %>>1954&nbsp;&nbsp;</option>
+                    <option value="1953"<% if (user.years ==1953) { %>selected<% } %>>1953&nbsp;&nbsp;</option>
+                    <option value="1952"<% if (user.years ==1952) { %>selected<% } %>>1952&nbsp;&nbsp;</option>
+                    <option value="1951"<% if (user.years ==1951) { %>selected<% } %>>1951&nbsp;&nbsp;</option>
+                    <option value="1950"<% if (user.years ==1950) { %>selected<% } %>>1950&nbsp;&nbsp;</option>
+                    <option value="1949"<% if (user.years ==1949) { %>selected<% } %>>1949&nbsp;&nbsp;</option>
+                    <option value="1948"<% if (user.years ==1948) { %>selected<% } %>>1948&nbsp;&nbsp;</option>
+                    <option value="1947"<% if (user.years ==1947) { %>selected<% } %>>1947&nbsp;&nbsp;</option>
+                    <option value="1946"<% if (user.years ==1946) { %>selected<% } %>>1946&nbsp;&nbsp;</option>
+                    <option value="1945"<% if (user.years ==1945) { %>selected<% } %>>1945&nbsp;&nbsp;</option>
+                    <option value="1944"<% if (user.years ==1944) { %>selected<% } %>>1944&nbsp;&nbsp;</option>
+                    <option value="1943"<% if (user.years ==1943) { %>selected<% } %>>1943&nbsp;&nbsp;</option>
+                    <option value="1942"<% if (user.years ==1942) { %>selected<% } %>>1942&nbsp;&nbsp;</option>
+                    <option value="1941"<% if (user.years ==1941) { %>selected<% } %>>1941&nbsp;&nbsp;</option>
+                    <option value="1940"<% if (user.years ==1940) { %>selected<% } %>>1940&nbsp;&nbsp;</option>
+                    <option value="1939"<% if (user.years ==1939) { %>selected<% } %>>1939&nbsp;&nbsp;</option>
+                    <option value="1938"<% if (user.years ==1938) { %>selected<% } %>>1938&nbsp;&nbsp;</option>
+                    <option value="1937"<% if (user.years ==1937) { %>selected<% } %>>1937&nbsp;&nbsp;</option>
+                    <option value="1936"<% if (user.years ==1936) { %>selected<% } %>>1936&nbsp;&nbsp;</option>
+                    <option value="1935"<% if (user.years ==1935) { %>selected<% } %>>1935&nbsp;&nbsp;</option>
+                    <option value="1934"<% if (user.years ==1934) { %>selected<% } %>>1934&nbsp;&nbsp;</option>
+                    <option value="1933"<% if (user.years ==1933) { %>selected<% } %>>1933&nbsp;&nbsp;</option>
+                    <option value="1932"<% if (user.years ==1932) { %>selected<% } %>>1932&nbsp;&nbsp;</option>
+                    <option value="1931"<% if (user.years ==1931) { %>selected<% } %>>1931&nbsp;&nbsp;</option>
+                    <option value="1930"<% if (user.years ==1930) { %>selected<% } %>>1930&nbsp;&nbsp;</option>
+                    <option value="1929"<% if (user.years ==1929) { %>selected<% } %>>1929&nbsp;&nbsp;</option>
+                    <option value="1928"<% if (user.years ==1928) { %>selected<% } %>>1928&nbsp;&nbsp;</option>
+                    <option value="1927"<% if (user.years ==1927) { %>selected<% } %>>1927&nbsp;&nbsp;</option>
+                    <option value="1926"<% if (user.years ==1926) { %>selected<% } %>>1926&nbsp;&nbsp;</option>
+                    <option value="1925"<% if (user.years ==1925) { %>selected<% } %>>1925&nbsp;&nbsp;</option>
+                    <option value="1924"<% if (user.years ==1924) { %>selected<% } %>>1924&nbsp;&nbsp;</option>
+                    <option value="1923"<% if (user.years ==1923) { %>selected<% } %>>1923&nbsp;&nbsp;</option>
+                    <option value="1922"<% if (user.years ==1922) { %>selected<% } %>>1922&nbsp;&nbsp;</option>
+                    <option value="1921"<% if (user.years ==1921) { %>selected<% } %>>1921&nbsp;&nbsp;</option>
+                    <option value="1920"<% if (user.years ==1920) { %>selected<% } %>>1920&nbsp;&nbsp;</option>
+                    <option value="1919"<% if (user.years ==1919) { %>selected<% } %>>1919&nbsp;&nbsp;</option>
+                    <option value="1918"<% if (user.years ==1918) { %>selected<% } %>>1918&nbsp;&nbsp;</option>
+                    <option value="1917"<% if (user.years ==1917) { %>selected<% } %>>1917&nbsp;&nbsp;</option>
+                    <option value="1916"<% if (user.years ==1916) { %>selected<% } %>>1916&nbsp;&nbsp;</option>
+                    <option value="1915"<% if (user.years ==1915) { %>selected<% } %>>1915&nbsp;&nbsp;</option>
+                    <option value="1914"<% if (user.years ==1914) { %>selected<% } %>>1914&nbsp;&nbsp;</option>
+                    <option value="1913"<% if (user.years ==1913) { %>selected<% } %>>1913&nbsp;&nbsp;</option>
+                    <option value="1912"<% if (user.years ==1912) { %>selected<% } %>>1912&nbsp;&nbsp;</option>
+                    <option value="1911"<% if (user.years ==1911) { %>selected<% } %>>1911&nbsp;&nbsp;</option>
+                    <option value="1910"<% if (user.years ==1910) { %>selected<% } %>>1910&nbsp;&nbsp;</option>
+                    <option value="1909"<% if (user.years ==1909) { %>selected<% } %>>1909&nbsp;&nbsp;</option>
+                    <option value="1908"<% if (user.years ==1908) { %>selected<% } %>>1908&nbsp;&nbsp;</option>
+                    <option value="1907"<% if (user.years ==1907) { %>selected<% } %>>1907&nbsp;&nbsp;</option>
+                    <option value="1906"<% if (user.years ==1906) { %>selected<% } %>>1906&nbsp;&nbsp;</option>
+                    <option value="1905"<% if (user.years ==1905) { %>selected<% } %>>1905&nbsp;&nbsp;</option>
+                    <option value="1904"<% if (user.years ==1904) { %>selected<% } %>>1904&nbsp;&nbsp;</option>
+                    <option value="1903"<% if (user.years ==1903) { %>selected<% } %>>1903&nbsp;&nbsp;</option>
+                    <option value="1902"<% if (user.years ==1902) { %>selected<% } %>>1902&nbsp;&nbsp;</option>
+                    <option value="1901"<% if (user.years ==1901) { %>selected<% } %>>1901&nbsp;&nbsp;</option>
+                    <option value="1900"<% if (user.years ==1900) { %>selected<% } %>>1900&nbsp;&nbsp;</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+             <div class="form-group required">
+              <label for="InputLastName">Apellidos <sup>*</sup> </label>
+              <input required type="text" class="form-control" id="InputLastName"  name="apellidos" value="<%= user.lastName %>" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="InputEmail"> Email </label>
+              <input type="email" class="form-control" id="InputEmail" name="email" value="<%= user.email %>" placeholder="" readonly>
+            </div>
+          </div>
+          <div class="col-lg-12">
+                 <% if (session.authenticated && session.User.admin) { %>
+                    <% if (user.admin) { %>
+                        <div class="checkbox">
+                        <input type="hidden" name="admin" value="unchecked">
+                        <label class="checkbox"><input type="checkbox" name="admin" checked> Admin</label>
+                       </div>
+                    <% } else { %>
+                        <div class="checkbox">
+                        <input type="hidden" name="admin" value="unchecked">
+                        <label class="checkbox"><input type="checkbox" name="admin"> Admin</label>
+                        </div>
+                    <% } %> 
+                <% } %>
+                 <% if (session.authenticated && session.User.admin == false) { %> 
+                      <input type="hidden" name="admin" value="unchecked">
+                  <% } %>
+          </div>
+          <div class="col-lg-12">
+            <button type="submit" class="btn   btn-primary"><i class="fa fa-save"></i> &nbsp; Guardar </button>
+             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </div>
+        </form>
+        <div class="col-lg-12 clearfix">
+          <ul class="pager">
+            <li class="previous pull-right"><a href="/"> <i class="fa fa-home"></i>Ir a la tienda</a></li>
+             <% if (session.authenticated && session.User.admin) { %>
+                <li class="next pull-left"><a href="/user/"> &larr; Regresar</a></li>
+             <% } else { %>
+                  <li class="next pull-left"><a href="/user/account"> &larr; Regresar</a></li>
+               <% } %> 
+          </ul>
+        </div>
+      </div>
+      <!--/row end--> 
+      
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-5"> </div>
+  </div>
+  <!--/row-->
+    
+  </div> <!--/.innerPage-->
+  <div style="clear:both">  </div>
+</div><!-- /.main-container -->
+
+<div class="gap"> </div>
+
+
+<script type="text/javascript" src="/script/jquery/jquery-1.10.1.min.js"></script> 
+<script src="/bootstrap/js/bootstrap.min.js"></script> 
+<script src="/script/idangerous.swiper-2.1.min.js"></script> 
+<script src="/script/validate/jquery.validate.min.js"></script>
+<script src="/script/validate/userEdit.js"></script>  

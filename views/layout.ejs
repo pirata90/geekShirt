@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<title><%- title %></title>
+<!-- Bootstrap core CSS -->
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet">
+
+<!-- css3 animation effect for this template -->
+<link href="/css/animate.min.css" rel="stylesheet">
+<!--STYLES END-->
+  </head>
+
+  <body>
+    <%- body %>
+
+<!-- Fixed navbar start -->
+<div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation">
+  <div class="navbar-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+          <div class="pull-left ">
+            <ul class="userMenu ">
+              <li> <a href="#"> <span class="hidden-xs">Soporte</span><i class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a> </li>
+              <li class="phone-number"> <a  href="callto:+8801680531352"> <span> <i class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> 88 01680 53 1352 </span> </a> </li>
+              <li> <a href="/contacto"> <span class="hidden-xs">Contactenos</span><i class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a> </li>
+              <li> <a href="/video"> <span class="hidden-xs">Videos</span><i class="glyphicon glyphicon-info-sign hide visible-xs "></i> </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6 no-margin no-padding">
+          <div class="pull-right">
+            <ul class="userMenu">
+              <% if (session.authenticated) { %>
+               <li class="active"><a><%= session.User.name %></a> </li>
+              <li> <a href="/user/account"><span class="hidden-xs"> Mi Cuenta</span> <i class="glyphicon glyphicon-user hide visible-xs "></i></a> </li>
+              <li> <a href="/session/destroy"><span class="hidden-xs">Salir</span> <i class="glyphicon glyphicon-user hide visible-xs "></i></a> </li>
+            <% } %>
+          </ul>
+          <% if (!session.authenticated) { %>
+           <ul class="userMenu">
+          <li> <a href="/session/new"><span class="hidden-xs">Ingresar</span> <i class="glyphicon glyphicon-user hide visible-xs "></i></a> </li>
+          <li> <a href="/user/new"><span class="hidden-xs"> Crear Cuenta</span> <i class="glyphicon glyphicon-user hide visible-xs "></i></a> </li>
+           </ul>
+          <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.navbar-top-->
+  
+  <div class="container">
+        
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"> <a href="/"> Home </a> </li>
+         <li> <a href="/inventario/catalogo"> Catalogo </a> </li>
+      </ul>
+      
+      <!--- this part will be hidden for mobile version -->
+      <div class="nav navbar-nav navbar-right hidden-xs">
+         <% if (session.authenticated) { %>
+        <li> <a href="/checkout/carro/<%= session.User.id %>"><i class="fa fa-shopping-cart"></i> Carro </a> </li>
+        <% } %>
+        <!--/.cartMenu-->
+        
+        <div class="search-box">
+          <div class="input-group">
+            <button class="btn btn-nobg getFullSearch" type="button"> <i class="fa fa-search"> </i> </button>
+          </div>
+          <!-- /input-group --> 
+          
+        </div>
+        <!--/.search-box --> 
+      </div>
+      <!--/.navbar-nav hidden-xs--> 
+    </div>
+    <!--/.nav-collapse --> 
+    
+  </div>
+  <!--/.container -->
+  
+  <div class="search-full text-right"> <a class="pull-right search-close"> <i class=" fa fa-times-circle"> </i> </a>
+   <form action="/inventario/buscar" method="POST" id="" role="form" >
+    <div class="searchInputBox pull-right">
+      <input type="search" name="buscar" placeholder="Buscar productos" class="search-input">
+      <button class="btn-nobg search-btn" type="submit"> <i class="fa fa-search"> </i> </button>
+    </div>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+  </form>
+  </div>
+  <!--/.search-full--> 
+  
+</div>
+<!-- /.Fixed navbar  -->
+
+
+
+    <footer>
+  <div class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+          <h3> Soporte </h3>
+          <ul>
+            <li class="supportLi">
+              <p> Lorem ipsum dolor sit amet, consectetur </p>
+              <h4> <a class="inline" href="callto:+8801680531352"> <strong> <i class="fa fa-phone"> </i> 88 01680 531352 </strong> </a> </h4>
+              <h4> <a class="inline" href="mailto:gshirt333@gmail.com"> <i class="fa fa-envelope-o"> </i> gshirt333@gmail.com </a> </h4>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+          <h3> Tienda </h3>
+          <ul>
+            <li> <a href="/"> Home </a> </li>
+            <li> <a href="/inventario/catalogo"> Catalago </a> </li>
+          </ul>
+        </div>
+        <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+          <h3> Informacion </h3>
+          <ul>
+            <li> <a href="/contacto"> Contactenos </a> </li>
+            <li> <a href="/terminos"> Terminos &amp; Condiciones </a> </li>
+          </ul>
+        </div>
+        <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+          <h3> Mi cuenta </h3>
+          <ul>
+            <li> <a href="/user/account"> Cuenta </a> </li>
+          </ul>
+        </div>
+        <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+          <h3> Manteganse informado </h3>
+
+          <ul class="social">
+            <li> <a href=" https://www.facebook.com/profile.php?id=100008484735769&fref=ts"> <i class=" fa fa-facebook"> &nbsp; </i> </a> </li>
+            <li> <a href="https://twitter.com/GSh1rt"> <i class="fa fa-twitter"> &nbsp; </i> </a> </li>
+            <li> <a href="https://plus.google.com/u/0/114351942744861646006/posts"> <i class="fa fa-google-plus"> &nbsp; </i> </a> </li>
+          </ul>
+        </div>
+      </div>
+      <!--/.row--> 
+    </div>
+    <!--/.container--> 
+  </div>
+  <!--/.footer-->
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="pull-left"> &copy; GeekShirt 2014. Derechos reservados. </p>
+      <div class="pull-right paymentMethodImg"> <img height="30" class="pull-right" src="/images/site/payment/master_card.png" alt="img" > <img height="30" class="pull-right" src="/images/site/payment/paypal.png" alt="img" > <img height="30" class="pull-right" src="/images/site/payment/american_express_card.png" alt="img" > <img  height="30" class="pull-right" src="/images/site/payment/discover_network_card.png" alt="img" > <img  height="30" class="pull-right" src="/images/site/payment/google_wallet.png" alt="img" > </div>
+    </div>
+  </div>
+  <!--/.footer-bottom--> 
+</footer>
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

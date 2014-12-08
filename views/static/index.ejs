@@ -1,0 +1,243 @@
+
+<!-- styles needed by carousel slider -->
+<link href="/css/owl.carousel.css" rel="stylesheet">
+<link href="/css/owl.theme.css" rel="stylesheet">
+
+<!-- styles needed by checkRadio -->
+<link href="/css/ion.checkRadio.css" rel="stylesheet">
+<link href="/css/ion.checkRadio.cloudy.css" rel="stylesheet">
+
+<!-- styles needed by mCustomScrollbar -->
+<link href="/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. -->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<!-- include pace script for automatic web page progress bar  -->
+
+<script>
+    paceOptions = {
+      elements: true
+    };
+</script>
+<script src="/script/pace.min.js"></script>
+</head>
+
+<body>
+
+<div class="container main-container headerOffset globalPaddingBottom"> 
+  
+  <!-- Main component call to action -->
+  <div class="col-lg-12 text-center">
+    <div class="home-intro">
+      <h2>Descubre una mejor <span>Experiencia</span>   En Camisetas </h2>
+    </div>
+    <hr>
+  </div>
+  <div style="clear:both"></div>
+  <div class="col-sm-10 show-case-wrapper center-block relative">
+    <div id="productShowCase" class="owl-carousel owl-theme">
+     <% _.each(articulos, function(articulo) { %>
+      <div class="product-slide">
+        <div class="col-sm-5 product-slide-left" > <a href="/inventario/producto/<%= articulo.id %>" class="product-slide-img"> <img alt="img" src="/images/upload/<%= articulo.fileName %>" class="img-responsive"></a> </div>
+        <div class="col-sm-7">
+          <div class="product-slide-inner ">
+            <h1 class="product-title"> <%= articulo.name %></h1>
+            <h3 class="product-code">Product Code : DEN1098</h3>
+            <div class="product-price"> <span class="price-sales"> &#8353;<%= articulo.precio %></span></div>
+            <div class="details-description">
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>   
+
+    </div>
+    <!--/#productShowCase -->
+    
+    <div style="clear:both;"></div>
+    <a id="ps-next" class="ps-nav"> <i class="fa fa-angle-right"></i> </a> <a id="ps-prev" class="ps-nav"> <i class="fa fa-angle-left"></i> </a> </div>
+  <!--/.show-case-wrapper -->
+  
+
+  <!--/.featuredPostContainer--> 
+</div>
+<!-- /main container -->
+
+<div class="w100 sectionCategory">
+  <div class="container">
+    <div class="sectionCategoryIntro text-center">
+      <h1>Categorias</h1>
+      <p> litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+    </div>
+    <div class="row subCategoryList clearfix">
+        <div class="col-md-5 col-sm-3 col-xs-4  col-xs-mini-6  text-center ">
+
+        </div>
+         <div class="col-md-2 col-sm-3 col-xs-4  col-xs-mini-6  text-center ">
+<div class="thumbnail equalheight"> <a class="subCategoryThumb" href="/inventario/catalogo"><img src="/images/principal/categoria.jpg" class="img-rounded " alt="img"> </a> <a  class="subCategoryTitle"><span> T shirt </span></a></div>
+        </div>
+        <div class="col-md-5 col-sm-3 col-xs-4  col-xs-mini-6  text-center ">
+
+        </div>
+
+    </div>
+    <!--/.row--> 
+    
+  </div>
+  <!--/.container--> 
+</div>
+<!--/.sectionCategory-->
+
+<div class="container main-container"> 
+  
+  <!-- Main component call to action -->
+  
+  <div class="morePost row featuredPostContainer style2 globalPaddingTop " >
+    <div class="col-lg-12">
+      <h3 class="boxes-title-1"><span>CAMISETAS</span></h3>
+    </div>
+    <div class="container">
+      <div class="row xsResponse">
+            
+       <% _.each(productos, function(producto) { %>
+        <!--/.item-->
+        <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="product">          
+            <div class="image"><a href="/inventario/producto/<%= producto.id %>"><img src="/images/upload/<%= producto.fileName %>" alt="img" class="img-responsive"></a> </div>
+            <div class="description">
+              <h4><a href="product-details.html"><%= producto.name %></a></h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+              <span class="size">XL / XXL / S </span> </div>
+            <div class="price"> <span>&#8353;<%= producto.precio %></span></div>
+          </div>
+        </div>
+        <!--/.item-->
+        <% }) %>   
+      </div>
+      <!-- /.row -->
+      
+    </div>
+    <!--/.container--> 
+  </div>
+  <!--/.featuredPostContainer-->
+    
+  <div class="width100 section-block">
+    <h3 class="section-title"><span> Marcas</span> <a id="nextBrand" class="link pull-right carousel-nav"> <i class="fa fa-angle-right"></i></a> <a id="prevBrand" class="link pull-right carousel-nav"> <i class="fa fa-angle-left"></i> </a> </h3>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="no-margin brand-carousel owl-carousel owl-theme">
+          <li> <a ><img src="/images/brand/1.gif" alt="img" ></a></li>
+          <li><img src="/images/brand/2.png" alt="img" ></li>
+          <li><img src="/images/brand/3.png" alt="img" ></li>
+          <li><img src="/images/brand/4.png" alt="img" ></li>
+          <li><img src="/images/brand/5.png" alt="img" ></li>
+          <li><img src="/images/brand/6.png" alt="img" ></li>
+          <li><img src="/images/brand/7.png" alt="img" ></li>
+          <li><img src="/images/brand/8.png" alt="img" ></li>
+          <li><img src="/images/brand/1.gif" alt="img" ></li>
+          <li><img src="/images/brand/2.png" alt="img" ></li>
+          <li><img src="/images/brand/3.png" alt="img" ></li>
+          <li><img src="/images/brand/4.png" alt="img" ></li>
+          <li><img src="/images/brand/5.png" alt="img" ></li>
+          <li><img src="/images/brand/6.png" alt="img" ></li>
+          <li><img src="/images/brand/7.png" alt="img" ></li>
+          <li><img src="/images/brand/8.png" alt="img" ></li>
+        </ul>
+      </div>
+    </div>
+    <!--/.row--> 
+  </div>
+  <!--/.section-block--> 
+  
+</div>
+<!--main-container-->
+
+<div class="parallax-section parallax-image-2">
+  <div class="w100 parallax-section-overley">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="parallax-content clearfix">
+            <h1 class="xlarge"> Vendedor de confianza </h1>
+            <h5 class="parallaxSubtitle"> Lorem ipsum dolor sit amet consectetuer </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.parallax-section-->
+
+<!-- Le javascript
+================================================== --> 
+
+<!-- Placed at the end of the document so the pages load faster --> 
+<script type="text/javascript" src="/script/jquery/jquery-1.10.1.min.js"></script> 
+<script src="/bootstrap/js/bootstrap.min.js"></script> 
+<script src="/script/idangerous.swiper-2.1.min.js"></script> 
+<script src="/script/validate/jquery.validate.min.js"></script>
+<script src="/script/validate/customValidate.js"></script>  
+<script>
+  var mySwiper = new Swiper('.swiper-container',{
+	pagination: '.box-pagination',
+ keyboardControl: true,
+    paginationClickable: true,
+    slidesPerView: 'auto',
+	autoResize:true,
+	resizeReInit:true,
+  })
+  
+  	 $('.prevControl').on('click', function(e){
+    e.preventDefault()
+    mySwiper.swipePrev()
+  })
+  $('.nextControl').on('click', function(e){
+    e.preventDefault()
+    mySwiper.swipeNext()
+  })
+  </script> 
+
+<!-- include jqueryCycle plugin --> 
+<script src="/script/jquery.cycle2.min.js"></script> 
+
+<!-- include easing plugin --> 
+<script src="/script/jquery.easing.1.3.js"></script> 
+
+<!-- include  parallax plugin --> 
+<script type="text/javascript"  src="/script/jquery.parallax-1.1.js"></script> 
+
+<!-- optionally include helper plugins --> 
+<script type="text/javascript"  src="/script/helper-plugins/jquery.mousewheel.min.js"></script> 
+
+<!-- include mCustomScrollbar plugin //Custom Scrollbar  --> 
+
+<script type="text/javascript" src="/script/jquery.mCustomScrollbar.js"></script> 
+
+<!-- include checkRadio plugin //Custom check & Radio  --> 
+<script type="text/javascript" src="/script/ion-checkRadio/ion.checkRadio.min.js"></script> 
+
+<!-- include grid.js // for equal Div height  --> 
+<script src="/script/grids.js"></script> 
+
+<!-- include carousel slider plugin  --> 
+<script src="/script/owl.carousel.min.js"></script> 
+
+<!-- jQuery minimalect // custom select   --> 
+<script src="/script/jquery.minimalect.min.js"></script> 
+
+<!-- include touchspin.js // touch friendly input spinner component   --> 
+<script src="/script/bootstrap.touchspin.js"></script> 
+
+<!-- include custom script for site  --> 
+<script src="/script/script.js"></script> 
+
+<!-- include custom script for only homepage  --> 
+<script src="/script/home.js"></script>
+</body>
+</html>
